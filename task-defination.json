@@ -1,0 +1,24 @@
+{
+    "family": "mycluster",
+    "executionRoleArn": "arn:aws:iam::843597355677:role/ecstask",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "name": "mycluster",
+            "image": "843597355677.dkr.ecr.us-east-1.amazonaws.com/mycluster:latest",
+            "portMappings": [
+                {
+                    "containerPort": 5000,
+                    "hostPort": 5000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "512",
+    "memory": "1024"
+}
